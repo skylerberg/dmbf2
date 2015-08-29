@@ -1,0 +1,15 @@
+{% include "_header.html.jinja" %}
+
+<ol class="breadcrumb">
+  <li><a href="{{ url_for("home") }}">Home</a></li>
+  <li class="active">{{ world.name }}</li>
+</ol>
+
+<h2>Viewing world {{ world.name }}</h2>
+{% for person in people %}
+<a href="{{ url_for("get_person", world=world.id, person=person.id) }}">
+{{ person.first_name }} {{ person.last_name }}
+</a>
+{% endfor %}
+
+{% include "_footer.html.jinja" %}

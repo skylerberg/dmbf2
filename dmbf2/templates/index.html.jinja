@@ -1,0 +1,16 @@
+{% include "_header.html.jinja" %}
+
+<div class="row">
+{% for world in worlds %}
+<div class="col-xs-6 col-md-3">
+<a class="thumbnail" href="{{ url_for("get_world", world=world.name) }}">
+{{ world.name }}
+</a>
+</div>
+{% endfor %}
+</div>
+
+
+{% include "_create_world.html.jinja" %}
+
+{% include "_footer.html.jinja" %}
